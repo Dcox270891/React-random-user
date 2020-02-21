@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 
-function TableHeader({title, users}) {
+function TableHeader({title, userData}) {
     const [order, setOrder] = useState("");
     
-    function sortTable(data){
+    function sortTable(userData){
         if (order === ""){
             setOrder("ascending")
         } else if (order === "ascending"){
+            userData.sort();
             setOrder("descending")
         } else if (order === "descending"){
+            userData.reverse();
             setOrder("")
         }
-        console.log(users)
     };
 
-    return(
+    return(<>
         <th onClick={sortTable}>{title}</th>
-    )
+    </>)
 };
 
 export default TableHeader;

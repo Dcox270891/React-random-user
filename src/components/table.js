@@ -3,8 +3,6 @@ import UserRow from "./user-row";
 import TableHeader from "./table-header";
 import api from "../utils/api";
 
-
-
 function Table(){
     const [users, setUsers] = useState([]);
 
@@ -16,10 +14,8 @@ function Table(){
             .catch(err => console.log(err))
     }, []);
 
-    
-
     return(
-        <div>
+        <>
             <TableHeader title="First Name" userData={users.map(user => user.name.first)}/>
             <TableHeader title="Last Name" userData={users.map(user => user.name.last)}/>
             <TableHeader title="Gender" userData={users.map(user => user.gender)}/>
@@ -29,7 +25,7 @@ function Table(){
             <TableHeader title="Country" userData={users.map(user => user.location.country)}/>
             <th>Picture</th>
             {users.map(user => <UserRow user={user} />)};
-        </div>
+        </>
     )
 };
 
