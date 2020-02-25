@@ -1,8 +1,7 @@
 import React from "react";
 
 function UserRow({user}){
-    return(<>
-        <tr>
+    return(<tr>
             <td>{user.name.first}</td>
             <td>{user.name.last}</td>
             <td>{user.gender}</td>
@@ -10,9 +9,8 @@ function UserRow({user}){
             <td>{user.location.city}</td>
             <td>{user.location.state}</td>
             <td>{user.location.country}</td>
-            <td><img src={user.picture.thumbnail}/></td>
-        </tr>
-    </>)
+            <td><img alt="User Picture" src={user.picture.thumbnail}></img></td>
+        </tr>)
 };
 
 export default UserRow;
